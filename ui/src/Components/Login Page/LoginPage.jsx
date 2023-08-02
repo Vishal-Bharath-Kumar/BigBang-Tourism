@@ -91,7 +91,7 @@ const LoginPage = () => {
           <br />
           <br />
           <p className='registerPara'>
-            Haven't an account ? &emsp;<a className='registerButton'>Register Now!</a>
+            Haven't an account ? &emsp;<a href='/' className='registerButton'>Register Now!</a>
           </p>
           {error && <p className='error'>{error}</p>}
         </form>

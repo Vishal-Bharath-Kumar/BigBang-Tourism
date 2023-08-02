@@ -153,7 +153,7 @@ const RegisterPage = () => {
           <br />
           <br />
           <p className='registerPara'>
-            Already Have an account ? &emsp;<a className='registerButton'>Sign In!</a>
+            Already Have an account ? &emsp;<a href='/' className='registerButton'>Sign In!</a>
           </p>
           {error && <p className='error'>{error}</p>}
         </form>

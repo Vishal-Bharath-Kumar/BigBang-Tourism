@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMask, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import {  faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import './UserNavbar.css';
 
 const UserNavbar = () => {
@@ -18,7 +18,7 @@ const UserNavbar = () => {
     <div>
       <header className="header" id="header">
         <a href="#header" className="logo">
-          <FontAwesomeIcon icon={faMask} /> Spark Tourism
+         Spark Tourism
         </a>
 
         <div
@@ -35,9 +35,6 @@ const UserNavbar = () => {
           </a>
           <a href="#packages" onClick={handleNavLinkClick}>
             packages
-          </a>
-          <a href="#hotels" onClick={handleNavLinkClick}>
-            hotels
           </a>
           <a href="#gallery" onClick={handleNavLinkClick}>
             gallery
