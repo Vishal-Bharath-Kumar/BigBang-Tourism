@@ -1,5 +1,99 @@
-.container {
-    position: absolute;
+@import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Viga&display=swap');
+.starterHome{
+  background-image: url("https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"), linear-gradient(to top, #000000, #000000);
+  height: 400px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.posterHead{
+  color: #eee;
+  font-size: 54px;
+  text-align: center;
+  font-family: "Comforter Brush";
+  letter-spacing: 1.2rem;
+  padding-top: 180px;
+}
+.bookButton {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 7px;
+  left: 45%;
+  top: -5%;
+  border: 1px solid rgb(255, 61, 61);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: transparent;
+  color: #fff;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.bookButton:hover {
+  background: rgb(255, 61, 61);
+  box-shadow: 0 0 30px 5px rgba(236, 0, 0, 0.815);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.bookButton:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+
+.bookButton::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+.bookButton:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
+
+
+.container1 {
+    position: relative;
+    margin-top: 400px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -8,7 +102,9 @@
     padding: 50px;
     background-color: #f5f5f5;
     box-shadow: 0 30px 50px #a9a8a8;
+    margin-bottom: 0px;
   }
+ 
   #slide {
     width: max-content;
     margin-top: 50px;
@@ -76,6 +172,7 @@
     font-size: 28px;
     margin: 20px 0;
     opacity: 0;
+    font-family: sans-serif;
     animation: showcontent 1s ease-in-out 0.3s 1 forwards;
   }
  
@@ -97,6 +194,7 @@
     z-index: 222222;
     text-align: center;
     width: 100%;
+    cursor: pointer;
   }
   .buttons button {
     width: 50px;
@@ -104,14 +202,201 @@
     border-radius: 50%;
     border: 1px solid #555;
     transition: 0.5s;
+    cursor: pointer;
   }
   .buttons button:hover {
     background-color: #1763a1f8;
   }
+  .weatherSearch{
+    margin-top: -320px;
+  }
+  #form{
+    text-align: center;
+  }
+  #form input{  
+    padding: 1rem;  
+    border-radius: 25px;  
+    border: none;  
+    background-color: rgb(255, 255, 255);  
+    font-family: inherit;  
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);  
+    min-width: 300px;  
+    font-size: 1rem;
+    outline: none; 
+    
+    
+  }  
+  #form input:focus{  
+    outline: 2px solid rgb(11, 52, 114);  
+  }  
+  .weather{  
+    text-align: center;  
+    font-size: 2rem ;  
+  }  
+  .weather h2{  
+    margin-bottom: 0;   
+    text-align: center; 
+     
+  }  
+  .typing{
+    color:#2B2D42;
+    font-family:"Kaushan Script" ;
+    font-size: 38px;
+    font-weight: 800;
+    text-align: center;
+  }
+  
+  @keyframes carouselAnim{
+    0%{
+      transform: translateX(100%) rotatey(0) scale(1.2, 1.2);
+      transform-origin: center center;
+      z-index: 10;
+    }
+    27%{
+      transform: translateX(100%) rotatey(0) scale(1.2, 1.2);
+      transform-origin: center center;
+      z-index: 10;
+    }
+    33.33333%{
+      transform: translateX(0) translateY(0) rotatey(10deg) scale(0.8,1);
+      transform-origin: left center;
+      z-index: 5;
+    }
+    60%{
+      transform: translateX(0) translateY(0) rotatey(10deg) scale(0.8,1);
+      transform-origin: left center;
+      z-index: 5;
+    }
+    66.666666%{
+      transform: translateX(200%) translateY(0) rotatey(-10deg) scale(0.8,1);
+      transform-origin: right center;
+      z-index: 5;
+    }
+    93%{
+      transform: translateX(200%) translateY(0) rotatey(-10deg) scale(0.8,1);
+      transform-origin: right center;
+      z-index: 5;
+    }
+    100%{
+      transform: translateX(100%) rotatey(0) scale(1.2, 1.2);
+      transform-origin: center center;
+      z-index: 10;
+    }
+  }
+  
+  .carousel__container{
+    width: 100%;
+    max-width: 960px;
+    perspective: 300px;
+    perspective-origin: 50% 60%;
+    min-height: 14em;
+    margin: 3em auto;
+  }
+  
+  .carousel__item{
+    position: absolute;
+    width: 33%; 
+    padding-bottom: 19%;
+    animation-name: carouselAnim;
+    /* transform: translateX(0) rotatey(50deg); */
+    transform-origin: left center;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+  }
+  
+  .carousel__item:first-child{
+    animation-delay: -4s;
+  }
+  .carousel__item:last-child{
+    animation-delay: -8s;
+  }
+  
+  .carousel__image{
+    position: absolute;
+    width: 100%;
+    border-radius: 2px;
+  }
+  .mapouter{
+    position:relative;
+    text-align:right;
+    height:100%;
+    width:100%;
+  }
+  .gmap_canvas {
+    overflow:hidden;
+    background:none!important;
+    height:100%;
+    width:100%;
+  }
+  .cardHolder{
+    padding: 5%;
+    background-image: url("https://images.pexels.com/photos/2751661/pexels-photo-2751661.jpeg?auto=compress&cs=tinysrgb&w=800");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .cardHeading{
+    color: #eee;
+    text-align: center;
+    font-size: 28px;
+  }
+  .cardPara{
+    color: #eee;
+  }
+  .cardHeading1{
+    color: #000000;
+    text-align: center;
+    font-size: 28px;
+  }
+  .cardPara1{
+    color: #000000;
+  }
+  .cardContainer{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    width: 70%;
+    margin:0.5rem auto;
+    padding:0.5rem;
+    border: thin solid white;
+  }
+  @media screen and (max-width:600px){
+    main{
+      width: 100%;
+    }
+  }
+
+  .card, .card-reverse{
+    width: 100%;
+    max-height:fit-content;
+    overflow:hidden; 
+    display:flex;
+    flex-wrap: wrap;
+    gap:1rem;
+    border: thin solid white;
+    box-shadow:3px 3px 10px rgba(0,0,0,0.2);
+  }
+
+  .card-reverse{
+    flex-direction: row-reverse;
+  }
+  
+  .cardImg{
+    width: 800px;
+    height:300px;
+    object-fit:cover;
+    flex: 1 1;
+  }
+  
+  /* Styling for the text box */
+  section{
+    width: fit-content;
+    margin: 2rem;
+    flex: 3 1;
+  }
   
 /* Mobile View Styles */
 @media screen and (min-width:280px) and (max-width: 767px) {
-    .container {
+    .container1 {
       /* Adjust the width and height to fit the mobile view */
       width: 100%;
       height: auto;
@@ -150,7 +435,7 @@
   
   /* Tablet View Styles */
   @media screen and (min-width: 768px) and (max-width: 1023px) {
-    .container {
+    .container1 {
       /* Adjust the width to fit the tablet view */
       width: 80%;
       height: auto;

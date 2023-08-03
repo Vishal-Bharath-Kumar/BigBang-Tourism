@@ -146,6 +146,7 @@ const RegisterPage = () => {
             </div>
           </div>
           <br />
+          {error && <p className='error'>{error}</p>}
           <br />
           <button type='submit' className='ui-btn'>
             <span>Sign Up</span>
@@ -155,7 +156,7 @@ const RegisterPage = () => {
           <p className='registerPara'>
             Already Have an account ? &emsp;<a href='/' className='registerButton'>Sign In!</a>
           </p>
-          {error && <p className='error'>{error}</p>}
+          
         </form>
       </div>
     </div>

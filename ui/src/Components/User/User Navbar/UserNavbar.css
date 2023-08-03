@@ -1,12 +1,13 @@
 /* UserNavbar.css */
 /* Add your other styles as needed */
-
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap');
 header {
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    background: #2B2D42;
+    background: #151620;
     padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
@@ -19,6 +20,7 @@ header {
     color: #8D99AE;
     font-size: 2rem;
     font-weight: bold;
+    font-family: "Comforter Brush";
   }
   
   header .logo i {
@@ -38,6 +40,7 @@ header {
     border-radius: 0.5rem;
     padding: 0.5rem 1.5rem;
     font-weight: bold;
+    font-family: "Arvo";
   }
   
   header .navbar a:hover {

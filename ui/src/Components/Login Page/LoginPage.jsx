@@ -84,6 +84,7 @@ const LoginPage = () => {
           </div>
           <br />
           <br />
+          {error && <p className='error'>{error}</p>}
           <br />
           <button type='submit' className='ui-btn'>
             <span>Sign In</span>
@@ -93,7 +94,7 @@ const LoginPage = () => {
           <p className='registerPara'>
             Haven't an account ? &emsp;<a href='/' className='registerButton'>Register Now!</a>
           </p>
-          {error && <p className='error'>{error}</p>}
+          
         </form>
       </div>
     </div>
