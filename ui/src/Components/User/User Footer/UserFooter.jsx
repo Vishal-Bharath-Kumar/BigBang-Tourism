@@ -20,7 +20,7 @@ const UserFooter = () => {
           <h5 className="text-uppercase">Contact Info</h5>
             <address>
                <i className="fa fa-phone"></i>&nbsp; <a className="address" href="tel:8754550424">Call Now for any Enquiry</a>  <br/><br/>
-               <i className="fa fa-envelope"></i>&nbsp;  <a className="address" href="mailto :vishalbharathkumar@gmail.com">vishalbharathkumar@gmail.com</a> 
+               <i className="fa fa-envelope"></i>&nbsp;  <a className="address" href="mailto :vishalbharathkumar@gmail.com">sparktourism@gmail.com</a> 
             </address>
         </div>
          {/* <!-- Social media links section --> */}

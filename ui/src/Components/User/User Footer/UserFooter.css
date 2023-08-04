@@ -25,12 +25,15 @@ footer{
     font-style: bold;
     color: white;
 }
-.address{
-    font-size: large;
+a .address{
+    
     font-family: sans-serif ;
-    color: white !important;
     padding-bottom: 40px;
     padding-top: 10px;
+}
+.address{
+  font-size: larger;
+  color: white;
 }
 h5{
     font-size: x-large;
