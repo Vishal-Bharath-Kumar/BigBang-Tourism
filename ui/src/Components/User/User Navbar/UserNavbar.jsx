@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import './UserNavbar.css';
+import { Link } from 'react-router-dom';
 
 const UserNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,24 +31,24 @@ const UserNavbar = () => {
         </div>
 
         <nav className={`navbar ${isMenuOpen ? 'active' : ''}`}>
-          <a href="#header" onClick={handleNavLinkClick}>
+          <Link to='/' onClick={handleNavLinkClick}>
             home
-          </a>
+          </Link>
           <a href="#packages" onClick={handleNavLinkClick}>
             packages
           </a>
           <a href="#gallery" onClick={handleNavLinkClick}>
             gallery
           </a>
-          <a href="#about" onClick={handleNavLinkClick}>
+          <Link to='/TodoList' onClick={handleNavLinkClick}>
             about us
-          </a>
+          </Link>
           <a href="#contact" onClick={handleNavLinkClick}>
             contact
           </a>
-          <a href="#login" onClick={handleNavLinkClick}>
+          <Link to='/Login' onClick={handleNavLinkClick}>
             login
-          </a>
+          </Link>
         </nav>
       </header>
     </div>
