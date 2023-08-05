@@ -252,6 +252,7 @@ const BookingForm = ({ onClose }) => {
                   </select>
                   {formErrors.hotels && <span className="formError">{formErrors.hotels}</span>}
                 </div>
+                <div className='splitInput'>
                 <div className={classNames('formControl', { formError: formErrors.numberOfPeople })}>
                   <label className="formLabel" htmlFor="numberOfPeople">
                     Number of People:
@@ -281,11 +282,12 @@ const BookingForm = ({ onClose }) => {
                     dateFormat="yyyy-MM-dd"
                     minDate={getCurrentDate()} // Set minDate to the current date
                     required
-                    className="formInput"
+                    className="formDateInput"
                   />
                   {formErrors.bookingDate && (
                     <span className="formError">{formErrors.bookingDate}</span>
                   )}
+                </div>
                 </div>
                 <div className={classNames('formControl', { formError: formErrors.paymentAmount })}>
                   <label className="formLabel" htmlFor="paymentAmount">
