@@ -3,11 +3,15 @@
     max-width: 500px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f7f7f7;
+    background-color: #c4c4c4;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
   }
-  
+.TodoListBody{
+  background-image: url("https://images.pexels.com/photos/164880/pexels-photo-164880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
+  height: 100vh;
+}
   .typing {
     text-align: center;
     margin-bottom: 20px;

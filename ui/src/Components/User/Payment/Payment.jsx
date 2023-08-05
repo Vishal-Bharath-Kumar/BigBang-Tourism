@@ -37,9 +37,9 @@ const Payment = () => {
     <div>
         <div className="App">
      <br/>
-     <input type="text"placeholder='Enter Amount'value={amount}onChange={(e)=>setamount(e.target.value)} />
+     <input type="text"placeholder='Enter Amount'className='formInput' value={amount}onChange={(e)=>setamount(e.target.value)} />
      <br/><br/>
-     <button onClick={handleSubmit}>submit</button>
+     <button type='submit' className='formButton' onClick={handleSubmit}>Pay Now</button>
     </div>
     </div>
   )

@@ -5,6 +5,7 @@ import UserNavbar from '../User Navbar/UserNavbar'
 import './UserHome.css'
 import UserFooter from "../User Footer/UserFooter";
 import UserFeedback from "../User Feedback/UserFeedback";
+import BookingForm from "../Booking Form/BookingForm";
 
 const UserHome = () => {
         //Carousel
@@ -108,12 +109,23 @@ const UserHome = () => {
             }
           });
         }, []); // Empty dependency array ensures this effect runs only once after mounting
+
+        const [isBookingDrawerOpen, setIsBookingDrawerOpen] = useState(false);
+
+        const handleBookingDrawerOpen = () => {
+          setIsBookingDrawerOpen(true);
+        };
+
+        const handleBookingDrawerClose = () => {
+          setIsBookingDrawerOpen(false);
+        };
   return (
     <>
     <UserNavbar />
     <div className="starterHome">
         <h1 className="posterHead">World Class Travel</h1>
-        <button className="bookButton">Book Now</button>
+        <button className="bookButton" onClick={handleBookingDrawerOpen}>Book Now</button>
+        {isBookingDrawerOpen && <BookingForm onClose={handleBookingDrawerClose} />}
     </div>
     <h1 className="typing">Explore New Destination With Us</h1>
     <div className="container1">
