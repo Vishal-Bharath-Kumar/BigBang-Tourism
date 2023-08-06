@@ -31,13 +31,7 @@
   
   .closeImg {
     cursor: pointer;
-  }
-  
-  .crossleft {
-    width: 24px;
-    height: 24px;
-  }
-  
+  } 
   .formControl {
     margin-bottom: 15px;
   }

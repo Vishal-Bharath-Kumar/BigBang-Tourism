@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect,useRef } from 'react';
 import Drawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
 import DatePicker from 'react-datepicker';
@@ -8,6 +8,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import './BookingForm.css';
 import Payment from '../Payment/Payment';
 import classNames from 'classnames';
+import Button from '@mui/material/Button';
+import OtpVerify from '../OTP Verify/OtpVerify';
 
 const BookingForm = ({ onClose }) => {
   const [state, setState] = useState({
@@ -108,14 +110,20 @@ const BookingForm = ({ onClose }) => {
     }
   };
 
-  // Function to get the current date in yyyy-MM-dd format
-  const getCurrentDate = () => {
-    const currentDate = new Date();
-    const year = currentDate.getFullYear();
-    const month = String(currentDate.getMonth() + 1).padStart(2, '0');
-    const day = String(currentDate.getDate()).padStart(2, '0');
-    return `${year}-${month}-${day}`;
-  };
+  const currentDate = new Date();
+
+  // Create a ref for the DatePicker component
+  const datePickerRef = useRef(null);
+
+  // Use useEffect to set the minDate attribute of the input element once the component is mounted
+  useEffect(() => {
+    if (datePickerRef.current) {
+      const inputElement = datePickerRef.current.input;
+      if (inputElement) {
+        inputElement.min = currentDate.toISOString().split('T')[0];
+      }
+    }
+  }, []);
 
   // State to control the Payment component
   const [paymentOpen, setPaymentOpen] = useState(false);
@@ -145,6 +153,18 @@ const BookingForm = ({ onClose }) => {
       paymentAmount: '',
     });
     setPaymentOpen(false);
+  };
+
+  const [otpVerifyOpen, setOtpVerifyOpen] = React.useState(false);
+
+  // Function to open the OtpVerify modal
+  const handleOpenOtpVerify = () => {
+    setOtpVerifyOpen(true);
+  };
+
+  // Function to close the OtpVerify modal
+  const handleCloseOtpVerify = () => {
+    setOtpVerifyOpen(false);
   };
 
   return (
@@ -252,42 +272,44 @@ const BookingForm = ({ onClose }) => {
                   </select>
                   {formErrors.hotels && <span className="formError">{formErrors.hotels}</span>}
                 </div>
-                <div className='splitInput'>
-                <div className={classNames('formControl', { formError: formErrors.numberOfPeople })}>
-                  <label className="formLabel" htmlFor="numberOfPeople">
-                    Number of People:
-                  </label>
-                  <input
-                    type="number"
-                    id="numberOfPeople"
-                    name="numberOfPeople"
-                    value={formData.numberOfPeople}
-                    min="1"
-                    max="10"
-                    onChange={handleChange}
-                    required
-                    className="formInput"
-                  />
-                  {formErrors.numberOfPeople && (
-                    <span className="formError">{formErrors.numberOfPeople}</span>
-                  )}
-                </div>
-                <div className={classNames('formControl', { formError: formErrors.bookingDate })}>
-                  <label className="formLabel" htmlFor="bookingDate">
-                    Booking Date:
-                  </label>
-                  <DatePicker
-                    selected={formData.bookingDate}
-                    onChange={handleDateChange}
-                    dateFormat="yyyy-MM-dd"
-                    minDate={getCurrentDate()} // Set minDate to the current date
-                    required
-                    className="formDateInput"
-                  />
-                  {formErrors.bookingDate && (
-                    <span className="formError">{formErrors.bookingDate}</span>
-                  )}
-                </div>
+                <div className="splitInput">
+                  <div className={classNames('formControl', { formError: formErrors.numberOfPeople })}>
+                    <label className="formLabel" htmlFor="numberOfPeople">
+                      Number of People:
+                    </label>
+                    <input
+                      type="number"
+                      id="numberOfPeople"
+                      name="numberOfPeople"
+                      value={formData.numberOfPeople}
+                      min="1"
+                      max="10"
+                      onChange={handleChange}
+                      required
+                      className="formInput"
+                    />
+                    {formErrors.numberOfPeople && (
+                      <span className="formError">{formErrors.numberOfPeople}</span>
+                    )}
+                  </div>
+                  <div className={classNames('formControl', { formError: formErrors.bookingDate })}>
+                    <label className="formLabel" htmlFor="bookingDate">
+                      Booking Date:
+                    </label>
+                    <DatePicker
+                       selected={formData.bookingDate}
+                       onChange={handleDateChange}
+                       dateFormat="yyyy-MM-dd"
+                       minDate={currentDate} // Set minDate to the current date
+                       required
+                       todayButton="Today" // Add a "Today" button to easily select the current date
+                       className="formDateInput"
+                       ref={datePickerRef} // Assign the ref to the DatePicker component
+                    />
+                    {formErrors.bookingDate && (
+                      <span className="formError">{formErrors.bookingDate}</span>
+                    )}
+                  </div>
                 </div>
                 <div className={classNames('formControl', { formError: formErrors.paymentAmount })}>
                   <label className="formLabel" htmlFor="paymentAmount">
@@ -306,15 +328,18 @@ const BookingForm = ({ onClose }) => {
                     <span className="formError">{formErrors.paymentAmount}</span>
                   )}
                 </div>
+                <Button onClick={handleOpenOtpVerify}>Verify Mobile Number</Button>
+
+                {/* OtpVerify modal */}
+                <OtpVerify open={otpVerifyOpen} onClose={handleCloseOtpVerify} />
+                <br />
                 <div className="formActions">
                   <button type="submit" className="formButton">
                     Proceed
                   </button>
                 </div>
               </form>
-              {paymentOpen && (
-                <Payment onClose={() => setPaymentOpen(false)} onSuccess={handlePaymentSuccess} />
-              )}
+              {paymentOpen && <Payment onClose={() => setPaymentOpen(false)} onSuccess={handlePaymentSuccess} />}
               <ToastContainer autoClose={3000} pauseOnHover />
             </div>
           </Drawer>
