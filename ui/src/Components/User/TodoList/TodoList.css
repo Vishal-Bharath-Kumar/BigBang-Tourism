@@ -1,0 +1,152 @@
+/* TodoList.css */
+.Todo {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #c4c4c4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 60px;
+  }
+.TodoListBody{
+  background-image: url("https://images.pexels.com/photos/164880/pexels-photo-164880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
+  height: 93vh;
+}
+  
+  .TodoTextInput {
+    width: 95%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .TodoTextInput:focus {
+    border-color: #4caf50;
+  }
+  
+  .TodoButton {
+    cursor: pointer;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .TodoButton:hover {
+    background-color: #45a049;
+  }
+  
+  .TodoUl {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .TodoLi {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .TodoLi input[type="checkbox"] {
+    margin-right: 10px;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+  }
+  
+  .TodoLi input[type="checkbox"]:checked {
+    border-color: #4caf50;
+  }
+  
+  .TodoLi input[type="checkbox"]:checked::before {
+    content: "\2713";
+    display: block;
+    font-size: 16px;
+    color: #4caf50;
+    text-align: center;
+    line-height: 1;
+  }
+  
+  .TodoDeleteButton {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .TodoDeleteButton:hover {
+    background-color: #d32f2f;
+  }
+
+  .TodoEditButton {
+    background-color: #3698f4;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .TodoEditButton:hover {
+    background-color: #2f76d3;
+  }
+  
+  .TodoLi:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .Todo p {
+    margin: 10px 0;
+    color: #666;
+  }
+  .TodoStatus{
+    display: flex;
+    justify-content: space-around;
+  }
+  .TodoCounter{
+    font-weight: 600;
+    padding-right: 10px;
+  }
+  
+  
+  /* Make buttons and input elements responsive */
+  @media (max-width: 600px) {
+    .typing {
+      font-size: 20px;
+    }
+  
+    .TodoTextInput {
+      font-size: 14px;
+    }
+  
+    .TodoButton {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  }
+  

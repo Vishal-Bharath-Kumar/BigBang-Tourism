@@ -1,0 +1,121 @@
+footer{
+    margin-top: 0%;
+
+}
+.row{
+    display: flex;
+    justify-content: space-around;
+    background-color:#151620 ;
+}
+
+.textcenter{
+    background-color: rgba(0, 0, 0, 0.644);
+    text-align: center;
+    font-weight: 300;
+    padding: 15px;
+    color: white;
+}
+.text-uppercase{
+    color: white;
+    margin-top: 15px;
+   
+}
+.text-dark{
+    font-size: large;
+    font-style: bold;
+    color: white;
+}
+a .address{
+    
+    font-family: sans-serif ;
+    padding-bottom: 40px;
+    padding-top: 10px;
+}
+.address{
+  font-size: larger;
+  color: white;
+}
+h5{
+    font-size: x-large;
+    color: white;
+    font-weight: 700;
+    margin-left: 70px;
+}
+.card1 {
+    display: flex;
+    height: 70px;
+    width: 270px;
+  }
+  
+  .card1 svg {
+    position: relative;
+    display: flex;
+    width: 60%;
+    height: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    opacity: 1;
+    transition: opacity 0.25s;
+    z-index: 2;
+    cursor: pointer;
+  }
+  
+  .card1 .social-link1,.card1 .social-link2,.card1 .social-link3,.card1 .social-link4 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    text-decoration: none;
+    transition: 0.25s;
+    border-radius: 50px;
+  }
+  
+  .card1 svg {
+    transform: scale(1);
+  }
+  
+  .card1 .social-link1:hover {
+    background: #f09433;
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+    animation: bounce_613 0.4s linear;
+  }
+  
+  .card1 .social-link2:hover {
+    background-color: #00ccff;
+    animation: bounce_613 0.4s linear;
+  }
+  
+  .card1 .social-link3:hover {
+    background-color: #5865f2;
+    animation: bounce_613 0.4s linear;
+  }
+  
+  .card1 .social-link4:hover {
+    background-color: #12a50b;
+    animation: bounce_613 0.4s linear;
+  }
+  
+  @keyframes bounce_613 {
+    40% {
+      transform: scale(1.4);
+    }
+  
+    60% {
+      transform: scale(0.8);
+    }
+  
+    80% {
+      transform: scale(1.2);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+  

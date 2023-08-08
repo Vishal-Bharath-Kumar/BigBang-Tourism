@@ -1,0 +1,73 @@
+
+  #modal-title{
+    padding-bottom: 20px;
+  }
+  .modal-content{
+    background-color: #eee;
+    padding: 50px;
+    border-radius: 10px;
+  }
+  .separateButton{
+    display: flex;
+  }
+ input.inputFile{
+  cursor: pointer;
+ }
+  .addImageButton{
+    padding: 10px 20px 10px 20px;
+    width: 120px;
+    border-radius: 5px;
+    margin: 90px 0px 0px 40px;
+    background-color: #1d2d50;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.534);
+    color: #eee;
+    cursor: pointer;
+  }
+  .addImageButton:hover{
+    background-color: #1d2d50d8;
+  }
+  .galleryHeading{
+    font-size: 3em;
+    text-align: center;
+    margin: 25px;
+    padding: 50px;
+    color: #1d2d50;
+    overflow: hidden;
+  }
+  #flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  
+  .column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+  }
+  
+  .column img {
+    vertical-align: middle;
+    margin-top: 8px;
+    filter: grayscale(70%);
+  }
+  
+  .column:nth-child(even) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  
+  @media screen and (max-width: 800px) {
+    .column {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
+  

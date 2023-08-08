@@ -1,0 +1,77 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\BigBang III\\Back-End\\Kanini_Tourism_API\\Kanini_Tourism_API\\wwwroot\\Hotel\\2b2cb62a-7f05-42a8-895f-ed9b8232bc1d.jpg",
+      "PackagePath": "staticwebassets\\Hotel\\2b2cb62a-7f05-42a8-895f-ed9b8232bc1d.jpg"
+    },
+    {
+      "Id": "D:\\BigBang III\\Back-End\\Kanini_Tourism_API\\Kanini_Tourism_API\\wwwroot\\Hotel\\35decf71-9412-4108-a602-f29bf140e96c.jpg",
+      "PackagePath": "staticwebassets\\Hotel\\35decf71-9412-4108-a602-f29bf140e96c.jpg"
+    },
+    {
+      "Id": "D:\\BigBang III\\Back-End\\Kanini_Tourism_API\\Kanini_Tourism_API\\wwwroot\\Hotel\\3d4ace2e-2cca-4ad1-aadd-7fdb0fff4aba.jpg",
+      "PackagePath": "staticwebassets\\Hotel\\3d4ace2e-2cca-4ad1-aadd-7fdb0fff4aba.jpg"
+    },
+    {
+      "Id": "D:\\BigBang III\\Back-End\\Kanini_Tourism_API\\Kanini_Tourism_API\\wwwroot\\Hotel\\8b6e1301-d0d0-41a8-9ba0-a14104772e3e.jpg",
+      "PackagePath": "staticwebassets\\Hotel\\8b6e1301-d0d0-41a8-9ba0-a14104772e3e.jpg"
+    },
+    {
+      "Id": "D:\\BigBang III\\Back-End\\Kanini_Tourism_API\\Kanini_Tourism_API\\wwwroot\\Hotel\\c4f20119-0be0-4ed7-8b87-0ae98396d59e.jpg",
+      "PackagePath": "staticwebassets\\Hotel\\c4f20119-0be0-4ed7-8b87-0ae98396d59e.jpg"
+    },
+    {
+      "Id": "D:\\BigBang III\\Back-End\\Kanini_Tourism_API\\Kanini_Tourism_API\\wwwroot\\Hotel\\cd1d8486-b206-431d-9213-4eb52e0c6aaf.jpg",
+      "PackagePath": "staticwebassets\\Hotel\\cd1d8486-b206-431d-9213-4eb52e0c6aaf.jpg"
+    },
+    {
+      "Id": "D:\\BigBang III\\Back-End\\Kanini_Tourism_API\\Kanini_Tourism_API\\wwwroot\\Hotel\\d41d3e24-4554-43ab-a86c-faa301dda7da.jpg",
+      "PackagePath": "staticwebassets\\Hotel\\d41d3e24-4554-43ab-a86c-faa301dda7da.jpg"
+    },
+    {
+      "Id": "D:\\BigBang III\\Back-End\\Kanini_Tourism_API\\Kanini_Tourism_API\\wwwroot\\Hotel\\e9e263eb-ac0a-4a76-be96-34a19a9f9d0d.jpg",
+      "PackagePath": "staticwebassets\\Hotel\\e9e263eb-ac0a-4a76-be96-34a19a9f9d0d.jpg"
+    },
+    {
+      "Id": "D:\\BigBang III\\Back-End\\Kanini_Tourism_API\\Kanini_Tourism_API\\wwwroot\\Tour\\2344edd7-39dc-40d1-b7b9-4d838a2437f5.jpg",
+      "PackagePath": "staticwebassets\\Tour\\2344edd7-39dc-40d1-b7b9-4d838a2437f5.jpg"
+    },
+    {
+      "Id": "D:\\BigBang III\\Back-End\\Kanini_Tourism_API\\Kanini_Tourism_API\\wwwroot\\Tour\\265a2a22-5e2c-4a58-9c49-d1e010376f2e.jpg",
+      "PackagePath": "staticwebassets\\Tour\\265a2a22-5e2c-4a58-9c49-d1e010376f2e.jpg"
+    },
+    {
+      "Id": "D:\\BigBang III\\Back-End\\Kanini_Tourism_API\\Kanini_Tourism_API\\wwwroot\\Tour\\318cc5db-f39b-47a3-b968-4495276d7a43.jpg",
+      "PackagePath": "staticwebassets\\Tour\\318cc5db-f39b-47a3-b968-4495276d7a43.jpg"
+    },
+    {
+      "Id": "D:\\BigBang III\\Back-End\\Kanini_Tourism_API\\Kanini_Tourism_API\\wwwroot\\Tour\\a4788985-810f-4772-bd1c-002d3fc559a5.jpg",
+      "PackagePath": "staticwebassets\\Tour\\a4788985-810f-4772-bd1c-002d3fc559a5.jpg"
+    },
+    {
+      "Id": "D:\\BigBang III\\Back-End\\Kanini_Tourism_API\\Kanini_Tourism_API\\wwwroot\\Tour\\a9fb757a-f10b-4ae7-bf91-ade8fb38ffa8.jpg",
+      "PackagePath": "staticwebassets\\Tour\\a9fb757a-f10b-4ae7-bf91-ade8fb38ffa8.jpg"
+    },
+    {
+      "Id": "D:\\BigBang III\\Back-End\\Kanini_Tourism_API\\Kanini_Tourism_API\\wwwroot\\Tour\\b6e3e12a-88cf-4b36-aa53-3908fc299d74.jpg",
+      "PackagePath": "staticwebassets\\Tour\\b6e3e12a-88cf-4b36-aa53-3908fc299d74.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Kanini_Tourism_API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.Kanini_Tourism_API.props",
+      "PackagePath": "build\\Kanini_Tourism_API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.Kanini_Tourism_API.props",
+      "PackagePath": "buildMultiTargeting\\Kanini_Tourism_API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.Kanini_Tourism_API.props",
+      "PackagePath": "buildTransitive\\Kanini_Tourism_API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

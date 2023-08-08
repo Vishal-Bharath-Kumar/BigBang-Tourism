@@ -1,0 +1,102 @@
+/* UserNavbar.css */
+/* Add your other styles as needed */
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap');
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #151620;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  
+  header .logo {
+    color: #8D99AE;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: "Comforter Brush";
+  }
+  
+  header .logo i {
+    color: #EF233C;
+    margin-right: 0.5rem;
+  }
+  
+  header .navbar {
+    display: flex;
+    align-items: center;
+  }
+  
+  header .navbar a {
+    color: #EDF2F4;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    font-weight: bold;
+    font-family: "Arvo";
+  }
+  
+  header .navbar a:hover {
+    color: #D90429;
+    background: #EDF2F4;
+  }
+  
+  header #menu-btn {
+    display: none; /* Hide the hamburger menu by default */
+    color: #EF233C;
+    cursor: pointer;
+  }
+  
+  header #menu-btn:hover {
+    color: #EDF2F4;
+  }
+  
+  .active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #2B2D42;
+    width: 100%;
+    text-align: right;
+    padding: 1rem;
+  }
+  
+  .active a {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Show the hamburger menu only on smaller screens */
+  @media screen and (max-width: 768px) {
+    header .navbar {
+      display: none;
+    }
+  
+    header #menu-btn {
+      display: block;
+      position: absolute;
+      top: 0.5rem;
+      right: 1rem;
+    }
+  
+    header .active {
+        display: flex;
+        flex-direction: column;
+        top: 100%;
+        right: 0;
+        background-color: #2B2D42;
+        width: 100%;
+        text-align: right;
+        padding: 1rem;
+        position: relative;
+    }
+  }
+  
