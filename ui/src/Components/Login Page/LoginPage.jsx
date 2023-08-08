@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import './LoginPage.css';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { toast, ToastContainer } from 'react-toastify';
+import jwt_decode from 'jwt-decode';
 
 const LoginPage = () => {
-  const [email, setEmail] = useState('');
+  const [emailId, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
@@ -17,15 +21,58 @@ const LoginPage = () => {
 
   const validatePassword = (password) => {
     // Use regex to validate the password
-    const passwordPattern = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-zA-Z]).{8,}$/;
+    const passwordPattern = /^(?=.*\d)(?=.*[a-zA-Z]).{8,}$/;
     return passwordPattern.test(password);
   };
 
-  const handleSubmit = (event) => {
+  const navigate = useNavigate();
+
+  const handleSubmit =async (event) => {
     event.preventDefault();
 
+    try {
+      console.log(emailId,password);
+      const response = await axios.post('https://localhost:7204/api/User/login', {emailId,password});
+
+      if (response.status === 200) {
+        const token = response.data;
+        localStorage.setItem('token', token);
+
+        const decodedToken = jwt_decode(token);
+        console.log('Token:', token);
+        console.log('Email Id:', emailId);
+        console.log('Role:', decodedToken.role);
+        console.log('nameid', decodedToken.nameid);
+        localStorage.setItem('nameid', decodedToken.nameid);
+        if (decodedToken.role === "Administrator") {
+          toast.success('Admin Login Successful');
+          navigate('/AdminDashboard');
+        }
+        else if(decodedToken.role === "TravelAgent"){
+          toast.success('Agent Login Successful');
+           navigate("/AgentHome");
+        }
+        else if(decodedToken.role === "Traveler"){
+          toast.success('User Login Successful');
+          navigate("/");
+        }
+        else{
+          toast.danger('Invalid Credentials');
+        }
+       
+
+      } else {
+        console.error('Error during login:', response);
+        toast.error('Invalid Credentials');
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      toast.error('Invalid Credentials');
+    }
+  
+
     // Validate username
-    if (!email) {
+    if (!emailId) {
       setError('Email is required');
       return;
     }
@@ -42,13 +89,7 @@ const LoginPage = () => {
       );
       return;
     }
-
-    // If everything is valid, perform the login logic here
-    // ...
-    // Your login logic goes here
-
-    // Clear error after successful submission
-    setError('');
+  
   };
 
   return (
@@ -61,7 +102,7 @@ const LoginPage = () => {
               type='email'
               className='form__field'
               placeholder='Name'
-              value={email}
+              value={emailId}
               onChange={handleEmailChange}
               required
             />
@@ -101,6 +142,7 @@ const LoginPage = () => {
           
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };

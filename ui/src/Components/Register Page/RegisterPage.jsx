@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect} from 'react';
 import './RegisterPage.css';
 import { Link } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import axios from "axios";
 
 const RegisterPage = () => {
   const [email, setEmail] = useState('');
@@ -9,6 +11,14 @@ const RegisterPage = () => {
   const [selectedOption, setSelectedOption] = useState(null); // State for radio button
 
   const [error, setError] = useState('');
+const [Registerdet ,setRegisterDetail]=useState({
+  userId: 0,
+  "username": "",
+  "emailId": "",
+  "password": "",
+  "userRole": 0,
+  "userStatus": 0
+})
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -28,12 +38,73 @@ const RegisterPage = () => {
 
   const validatePassword = (password) => {
     // Use regex to validate the password
-    const passwordPattern = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-zA-Z]).{8,}$/;
+    const passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+
     return passwordPattern.test(password);
   };
 
+ 
+
+  useEffect(() => {
+    console.log(Registerdet);
+  }, [Registerdet]);
+
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    if (selectedOption === 'Traveler') {
+      setRegisterDetail({
+        "username": username,
+        "emailId": email,
+        "password": password,
+        "userRole": 2,
+        "userStatus": 0,
+      });
+
+      axios.post('https://localhost:7204/api/User/register', Registerdet, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+        .then((response) => {
+          console.log('Response:', response.data);
+          toast.success('Traveler Registered Successfully');
+          window.location.reload();
+          // Handle the response data here
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+          toast.error('Oops Try Again');
+          // Handle the error here
+        });
+    
+    } else if (selectedOption === 'Agent') {
+      setRegisterDetail({
+        "username": username,
+        "emailId": email,
+        "password": password,
+        "userRole": 1,
+        "userStatus": 1,
+      });
+
+      axios.post('https://localhost:7204/api/User/register', Registerdet, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+        .then((response) => {
+          console.log('Response:', response.data);
+          toast.success('Agent Registered Successfully');
+          window.location.reload();
+          // Handle the response data here
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+          toast.error('Oops Try Again');
+          // Handle the error here
+        });
+    }
+  
 
     // Validate username
     if (!username) {
@@ -160,6 +231,7 @@ const RegisterPage = () => {
           
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };
