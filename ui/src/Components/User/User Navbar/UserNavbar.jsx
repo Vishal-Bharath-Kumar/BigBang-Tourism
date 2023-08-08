@@ -53,10 +53,10 @@ const UserNavbar = () => {
             gallery
           </a>
           <Link to="/TodoList" onClick={handleNavLinkClick}>
-            about us
+            Planner
           </Link>
           <Link to='/Main' onClick={handleNavLinkClick}>
-            contact
+            Virtual Assistant
           </Link>
           {/* Conditional rendering for login/logout link */}
           {isTravelerLoggedIn() ? (
