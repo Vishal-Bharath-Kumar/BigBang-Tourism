@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Kanini_Tourism_API",
+    "\\Kanini_Tourism_API\\Controllers",
+    "\\Kanini_Tourism_API\\Exceptions",
+    "\\Kanini_Tourism_API\\Migrations",
+    "\\Kanini_Tourism_API\\Models",
+    "\\Kanini_Tourism_API\\Models\\Data",
+    "\\Kanini_Tourism_API\\Repository",
+    "\\Kanini_Tourism_API\\Repository\\Interfaces",
+    "\\Kanini_Tourism_API\\Repository\\Services"
+  ],
+  "SelectedNode": "\\Kanini_Tourism_API\\Repository\\Services\\TravelAgentRepository.cs",
+  "PreviewInSolutionExplorer": false
+}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AdminNavbar from '../Admin Navbar/AdminNavbar';
 import './AdminGallery.css';
 import Modal from '@mui/material/Modal';
@@ -6,28 +6,54 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
+import axios from 'axios';
 
 const AdminGallery = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [galleries, setGalleries] = useState([]);
 
-  // Function to handle modal open event
+  useEffect(() => {
+    fetchGalleries();
+  }, []);
+
   const handleOpenModal = () => {
     setIsModalOpen(true);
   };
 
-  // Function to handle modal close event
   const handleCloseModal = () => {
     setIsModalOpen(false);
+    setSelectedFile(null);
   };
 
-  // Function to handle file input change
   const handleFileInputChange = (e) => {
-    // Handle the selected image file here (e.target.files[0])
-    console.log('Selected file:', e.target.files[0]);
-    // Close the modal after selecting the image
-    handleCloseModal();
+    setSelectedFile(e.target.files[0]);
   };
 
+  const handleSubmit = async () => {
+    if (selectedFile) {
+      console.log("Selected file before submission:", selectedFile);
+      const formData = new FormData();
+      formData.append('imageUrl', selectedFile);
+
+      try {
+        await axios.post('https://localhost:7204/api/Galleries', formData);
+        fetchGalleries();
+        handleCloseModal();
+      } catch (error) {
+        console.error('Error adding image:', error);
+      }
+    }
+  };
+
+  const fetchGalleries = async () => {
+    try {
+      const response = await axios.get('https://localhost:7204/api/Galleries');
+      setGalleries(response.data);
+    } catch (error) {
+      console.error('Error fetching galleries:', error);
+    }
+  };
 
   return (
     <div className="adminGalleryContainer">
@@ -60,15 +86,20 @@ const AdminGallery = () => {
                 Choose Image
               </Typography>
               <input type="file" className='inputFile' onChange={handleFileInputChange} />
+              <button onClick={handleSubmit} className="submitButton">
+                Submit
+              </button>
             </Box>
           </Box>
         </Modal>
         <div>
           <h1 className='galleryHeading'>Our Happy Travelers</h1>
-          <div id="flexbox">
-            <div class="column">
-              <img src="https://docs.google.com/uc?export=download&id=1U4Z-2GJcRDtIAmZt4ej0MOF_NvA0ntzS" alt="Image" width="100%" />
-            </div>
+          <div id="flexbox" className="galleryFlexbox">
+            {galleries.map((gallery, index) => (
+              <div key={index} className="column">
+                <img src={gallery.imageUrl} alt={`Gallery ${index}`} width="100%" />
+              </div>
+            ))}
           </div>
         </div>
       </div>
